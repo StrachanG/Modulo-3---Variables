@@ -1,38 +1,77 @@
-// PASO 1 - Crear una constante para generar un número aleatorio
-const generarNumeroAleatorio = (): number => Math.floor(Math.random() * 101);
-// PASO 2 - Crear una constante que sea numeroParaAcertar (1) y hacerlo igual al número aleatório generado.
-const numeroParaAcertar: number = generarNumeroAleatorio();
+const nombreGrupo = "font-style:bold; font-size:18px; color:green;";
 
-type Estado =
-  |   "NO_ES_UN_NUMERO"
-  |   "EL_NUMERO_ES_MAYOR"
-  |   "EL_NUMERO_ES_MENOR"
-  |   "ES_EL_NUMERO_SECRETO"
-  |   "GAME_OVER_MAXIMO_INTENTOS";
 
-const MAXIMO_INTENTOS: number = 5;
-let numeroDeIntentos: number = 0;
-
-const hasSuperadoElNumeroMaximoDeIntentos = () : boolean =>
-    numeroDeIntentos >= MAXIMO_INTENTOS;
-
-const muestraNumeroDeIntentos = () => {
-    const elementoItentos = document.getElementById("intentos");
-
-    if(elementoItentos) {
-        elementoItentos.innerHTML = `${numeroDeIntentos} de ${MAXIMO_INTENTOS}`
-    } else {
-        console.error("muestraNumeroDeIntento: No se ha encontrado el elemento con id intento");
-    }
+// INTERFACE DE LA INFORMACIÓN DE LOS GRUPOS
+interface InfoGrupo {
+    nombreCantanteCompositor : string;
+    fundacion : number;
+    activo : boolean;
+    genero : string;
 }
 
-// Cuando se carga el DOM, poner por pantalla el numero de intentos.
-document.addEventListener("DOMContentLoaded", muestraNumeroDeIntentos);
+// GENEROS MUSICALES
+const popRock : string = `🎵Pop-Rock`;
+const rock : string = `🎸Rock`;
+const hardRock : string = `🤘Hard-Rock`;
+const clasica : string = `🎼Clásica`;
 
-// Lanzar Game Over cuando hayas alcanzado el número MAX de intentos.
+// DIFERENTES GRUPOS
+const beatles : InfoGrupo = {
+    nombreCantanteCompositor: "The Beatles",
+    fundacion: 1960,
+    activo: true,
+    genero: `${popRock}`,
+};
 
-const gestionarGameOver = (estado) => {
-    if(estado === GAME_OVER_MAXIMO_INTENTOS) {
-        document.getElementById("comprobar").disable = true;
-    }
+const queen : InfoGrupo = {
+    nombreCantanteCompositor:"Queen",
+    fundacion:1970,
+    activo: false,
+    genero: `${rock}`,
+};
+
+const acdc : InfoGrupo = {
+    nombreCantanteCompositor:"ACDC",
+    fundacion:1973,
+    activo: true,
+    genero: `${hardRock}`,
+};
+
+const beethoven : InfoGrupo = {
+    nombreCantanteCompositor:"Ludwing Van Beethoven",
+    fundacion: 1770,
+    activo: false,
+    genero: `${clasica}`,
 }
+
+const rollingStone : InfoGrupo = {
+    nombreCantanteCompositor:"The Rolling Stone",
+    fundacion: 1962,
+    activo: true,
+    genero: `${rock}`,
+}
+
+
+// CONSOLE LOG PARA MOSTRAR LOS GRUPOS
+console.log(`%cThe Beatles`, nombreGrupo);
+console.log(beatles);
+
+/*-------------*/ 
+
+console.log(`%cQueen`, nombreGrupo);
+console.log(queen);
+
+/*-------------*/
+
+console.log(`%cACDC`, nombreGrupo);
+console.log(acdc);
+
+/*-------------*/
+
+console.log(`%cLudwig Van Beethoven`, nombreGrupo);
+console.log(beethoven);
+
+/*-------------*/
+
+console.log(`%cThe Rolling Stonces`, nombreGrupo);
+console.log(rollingStone);
