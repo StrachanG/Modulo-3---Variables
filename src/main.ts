@@ -1,3 +1,4 @@
+// DEFINO EL ESTILO DE LOS TÍTULOS
 const nombreGrupo = "font-style:bold; font-size:18px; color:green;";
 
 
@@ -56,22 +57,22 @@ const rollingStone : InfoGrupo = {
 console.log(`%cThe Beatles`, nombreGrupo);
 console.log(beatles);
 
-/*-------------*/ 
+/*------QUEEN-------*/ 
 
 console.log(`%cQueen`, nombreGrupo);
 console.log(queen);
 
-/*-------------*/
+/*------ACDC-------*/
 
 console.log(`%cACDC`, nombreGrupo);
 console.log(acdc);
 
-/*-------------*/
+/*------BEETHOVEN-------*/
 
 console.log(`%cLudwig Van Beethoven`, nombreGrupo);
 console.log(beethoven);
 
-/*-------------*/
+/*------ROLLING-STONE-------*/
 
 console.log(`%cThe Rolling Stonces`, nombreGrupo);
 console.log(rollingStone);
